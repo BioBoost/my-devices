@@ -17,6 +17,7 @@
 $primary-color: #BB392E;
 $secondary-color: #72B97D;
 $background-color: #F7F7F7;
+$table-striped-color: #F3EBC0;
 
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
@@ -30,4 +31,14 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+.page-title {
+  color: $navbar-font-color;
+  display: inline-block;
+  position: absolute;
+  font-size: $navbar-brand-font-size;
+  padding: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
