@@ -1,7 +1,7 @@
 <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
+      <%= link_to 'My-Devices', root_path, class: "brand-logo" %>
       <span class="page-title center"><%= content_for :title %></span>
       <ul class="right hide-on-med-and-down">
         <li><%= link_to 'Devices', devices_path %></li>
