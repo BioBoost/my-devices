@@ -1,15 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Devices</h1>
-
-<table>
+<table class="highlight">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Mac</th>
-      <th>Ip</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>MAC</th>
+      <th>IP</th>
+      <th>Owner</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -19,15 +17,13 @@
         <td><%= device.name %></td>
         <td><%= device.mac %></td>
         <td><%= device.ip %></td>
-        <td><%= device.user_id %></td>
-        <td><%= link_to 'Show', device %></td>
+
+        <td><%= (device.user) ? device.user.name : (link_to 'Claim', edit_device_path(device),
+          class: 'waves-effect waves-light btn-small') %></td>
+
         <td><%= link_to 'Edit', edit_device_path(device) %></td>
         <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Device', new_device_path %>
