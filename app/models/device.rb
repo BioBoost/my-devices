@@ -5,9 +5,15 @@ class Device < ApplicationRecord
     presence: true, uniqueness: true
 
   before_save :downcase_mac
+  after_validation :expand_mac
     
   private
   def downcase_mac
     self.mac.downcase!
+  end
+
+  private
+  def expand_mac
+    self.mac = ApplicationController.helpers.expand_mac(self.mac)
   end
 end
