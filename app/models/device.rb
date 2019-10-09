@@ -1,5 +1,5 @@
 class Device < ApplicationRecord
-  belongs_to :device, optional: true
+  belongs_to :user, optional: true
 
   validates :mac, format: { with: /\A([0-9A-Fa-f]{1,2}[-:]){5}([0-9A-Fa-f]{1,2})\z/ },
     presence: true, uniqueness: true
