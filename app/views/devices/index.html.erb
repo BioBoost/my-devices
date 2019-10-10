@@ -9,6 +9,7 @@
       <th>MAC</th>
       <th>IP</th>
       <th>Owner</th>
+      <th>Last Seen</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -23,8 +24,7 @@
         <td><%= (device.user) ? device.user.name : (link_to 'Claim', edit_device_path(device),
           class: 'waves-effect waves-light btn-small') %></td>
 
-        <td><%= link_to 'Edit', edit_device_path(device) %></td>
-        <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= device.last_seen %></td>
       </tr>
     <% end %>
   </tbody>
