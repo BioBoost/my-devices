@@ -7,10 +7,6 @@ class Device < ApplicationRecord
   before_save :downcase_mac
   after_validation :expand_mac
 
-  def last_seen
-    'never'
-  end
-
   private
   def downcase_mac
     self.mac.downcase!
