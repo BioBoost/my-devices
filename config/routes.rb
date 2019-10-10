@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   root to: "static_pages#home"
   get '/api/docs', to: 'static_pages#api_docs', as: 'api_docs'
+  post '/updates', to: 'updates#create', as: 'update'
 end
